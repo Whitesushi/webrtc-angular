@@ -1,0 +1,26 @@
+Current room: {{ roomId }} / Current user: {{ userId }}
+<div class="video-container">
+    <video #localVideo autoplay muted></video>
+    <video #remoteVideo autoplay></video>
+</div>
+<div>
+    <button (click)="createRoom()">Create Room</button>
+    <input [(ngModel)]="roomId" placeholder="Enter Room ID">
+    <button (click)="joinRoom(roomId)">Join Room</button>
+  </div>
+  
+  <div>
+    <h3>Available Rooms:</h3>
+    <ul>
+      <li *ngFor="let room of availableRooms">
+        <a (click)="joinRoom(room)">{{ room }}</a>
+      </li>
+    </ul>
+
+    <h3>Current Users:</h3>
+    <ul>
+      <li *ngFor="let user of currentUsers">
+        {{ user.name }}
+      </li>
+    </ul>
+  </div>

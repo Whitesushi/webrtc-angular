@@ -1,0 +1,29 @@
+/* Container holding the video elements */
+.video-container {
+    display: flex;               /* Enables flexbox */
+    justify-content: center;     /* Center the items horizontally */
+    align-items: center;         /* Center the items vertically */
+    height: auto;               /* Take full viewport height */
+    padding: 10px;               /* Add some spacing around */
+    box-sizing: border-box;      /* Include padding in height calculation */
+}
+
+/* Styles for both videos */
+video {
+    width: 50%;                  /* Each video takes half of the container's width */
+    height: auto;                /* Maintain the aspect ratio */
+    flex-grow: 1;                /* Allow the video to grow to fill the space */
+    border: 1px solid #ccc;     /* Adds a border around the video */
+    border-radius: 8px;         /* Optional: Rounds the corners */
+}
+
+/* Additional media query for responsiveness */
+@media (max-width: 600px) {
+    div {
+        flex-direction: column; /* Stack the videos vertically on smaller screens */
+    }
+
+    video {
+        width: 100%;            /* Each video takes full width of the container */
+    }
+}
